@@ -37,7 +37,6 @@ stages:
           backendAzureRmResourceGroupName: 'actionsight'
           backendAzureRmStorageAccountName: 'actionsight'
           backendAzureRmContainerName: 'azure-webjobs-hosts'
-          backendAzureRmContainerName: 'tfstatefiles'
           backendAzureRmKey: 'aks-base.tfstate'
           allowTelemetryCollection: false
 
