@@ -25,19 +25,6 @@ stages:
         displayName: Terraform Install
         inputs:
           terraformVersion: 'latest'
-      
-      - task: TerraformCLI@0
-        displayName: Terraform Init
-        inputs:
-          command: 'init'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
-          backendType: 'azurerm'
-          backendServiceArm: 'VIsual studio(eae68d0b-b916-484d-b674-587bd242b255)'
-          backendAzureRmResourceGroupName: 'actionsight'
-          backendAzureRmStorageAccountName: 'actionsight'
-          backendAzureRmContainerName: 'azure-webjobs-hosts'
-          backendAzureRmKey: 'aks-base.tfstate'
-          allowTelemetryCollection: false
 
       - task: TerraformCLI@0
         displayName: Terraform Validate
