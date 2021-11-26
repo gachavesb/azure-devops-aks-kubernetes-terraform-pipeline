@@ -31,15 +31,14 @@ stages:
         displayName: Terraform Init
         inputs:
           command: 'init'
+          workingDirectory: '$(System.DefaultWorkingDirectory)terraform-manifests'
           backendType: 'azurerm'
           backendServiceArm: 'terraform-aks-azurerm-svc-con'
-          ensureBackend: true
-          backendAzureRmResourceGroupName: 'AKStfresourcegroup'
-          backendAzureRmResourceGroupLocation: 'East us'
-          backendAzureRmStorageAccountName: 'AKStfstorageaccount'
+          backendAzureRmResourceGroupName: 'terraform-storage-rg'
+          backendAzureRmStorageAccountName: 'terraformstatexlrwdrzs'
           backendAzureRmContainerName: 'tfstatefiles'
           backendAzureRmKey: 'aks-base.tfstate'
-          allowTelemetryCollection: false
+          allowTelemetryCollection: true
       - task: TerraformCLI@0
         inputs:
           command: 'validate'
